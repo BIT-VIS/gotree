@@ -1,0 +1,37 @@
+{
+  "Title": "HorizontalLinearLayout",
+  "Layout": {
+    "Mode": "bottom-up",
+    "X": {
+      "Subtree": {
+        "Relation": "flatten",
+        "Margin": "0.01"
+      },
+      "Root": {
+        "Relation": "within"
+      }
+    },
+    "Y": {
+      "Subtree": {
+        "Relation": "align"
+      },
+      "Root": {
+        "Relation": "within"
+      }
+    },
+    "SubtreeWidth": "adaptive",
+    "SubtreeHeight": "adaptive"
+  },
+  "CoordinateSystem": {
+    "Category": "cartesian"
+  },
+  "Element": {
+    "Node": "circle",
+    "SizeOption": "static",
+    "Color": "depth",
+    "StaticSize": 14,
+    "Link": "straight",
+    "Thickness": "static",
+    "StaticThickness": 2
+  }
+}

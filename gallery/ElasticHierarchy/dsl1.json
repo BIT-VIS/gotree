@@ -1,0 +1,34 @@
+{
+  "Title": "NodelinkTree",
+  "Layout": {
+    "Mode": "bottom-up",
+    "X": {
+      "Subtree": {
+        "Relation": "align"
+      },
+      "Root": {
+        "Relation": "juxtapose"
+      }
+    },
+    "Y": {
+      "Subtree": {
+        "Relation": "flatten"
+      },
+      "Root": {
+        "Relation": "within"
+      }
+    },
+    "SubtreeWidth": "adaptive",
+    "SubtreeHeight": "adaptive"
+  },
+  "CoordinateSystem": {
+    "Category": "cartesian"
+  },
+  "Element": {
+    "Node": "circle",
+    "Color": "depth",
+    "Link": "straight",
+    "Thickness": "static",
+    "StaticThickness": 2
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "Title": "StairTree",
+  "Layout": {
+    "Mode": "bottom-up",
+    "X": {
+      "Subtree": {
+        "Relation": "flatten",
+        "Margin": "0.15"
+      },
+      "Root": {
+        "Relation": "juxtapose",
+        "Margin": "0"
+      }
+    },
+    "Y": {
+      "Subtree": {
+        "Relation": "flatten"
+      },
+      "Root": {
+        "Relation": "within",
+        "Alignment": "top"
+      }
+    },
+    "SubtreeWidth": "adaptive",
+    "SubtreeHeight": "adaptive"
+  },
+  "CoordinateSystem": {
+    "Category": "cartesian"
+  },
+  "Element": {
+    "Node": "circle",
+    "Color": "depth",
+    "Link": "curve",
+    "Thickness": "static",
+    "StaticThickness": 2
+  }
+}

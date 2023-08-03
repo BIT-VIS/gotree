@@ -1,0 +1,43 @@
+{
+  "Element": {
+    "Node": "circle",
+    "Color": "depth",
+    "Link": "curve",
+    "LinkWidth": "depth",
+    "LinkWidthRatio": 1,
+    "Thickness": "depth",
+    "MinThickness": 0,
+    "MaxThickness": 12,
+    "SizeOption": "static",
+    "StaticSize": 6
+  },
+  "CoordinateSystem": {
+    "Category": "cartesian"
+  },
+  "Layout": {
+    "Category": "AxisIndependent",
+    "X": {
+      "Root": {
+        "Relation": "include"
+      },
+      "Subtree": {
+        "Relation": "flatten",
+        "SortingCriteria": "height"
+      }
+    },
+    "Y": {
+      "Root": {
+        "Relation": "juxtapose",
+        "Margin": "0r",
+        "Position": "bottom"
+      },
+      "Subtree": {
+        "Relation": "align",
+        "Alignment": "bottom"
+      }
+    },
+    "Mode": "top-down",
+    "SubtreeWidth": "adaptive",
+    "SubtreeHeight": "adaptive"
+  }
+}

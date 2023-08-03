@@ -1,0 +1,42 @@
+{
+  "Title": "SliceLayout",
+  "Layout": {
+    "Mode": "top-down",
+    "X": {
+      "Subtree": {
+        "Relation": "flatten",
+        "Margin": "0.20"
+      },
+      "Root": {
+        "Relation": "include",
+        "Padding": [
+          "-0.05",
+          "0.061875"
+        ]
+      }
+    },
+    "Y": {
+      "Subtree": {
+        "Relation": "align"
+      },
+      "Root": {
+        "Relation": "include",
+        "Padding": [
+          "0.04",
+          "0.04"
+        ]
+      }
+    },
+    "SubtreeWidth": "value",
+    "SubtreeHeight": "adaptive"
+  },
+  "CoordinateSystem": {
+    "Category": "polar"
+  },
+  "Element": {
+    "Node": "rectangle",
+    "RootWidth": "value",
+    "RootHeight": "value",
+    "Color": "depth"
+  }
+}

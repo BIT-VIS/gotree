@@ -1,0 +1,36 @@
+{
+  "Title": "SequenceLayout",
+  "Layout": {
+    "Mode": "bottom-up",
+    "X": {
+      "Subtree": {
+        "Relation": "flatten"
+      },
+      "Root": {
+        "Relation": "juxtapose"
+      }
+    },
+    "Y": {
+      "Subtree": {
+        "Relation": "align",
+        "Alignment": "top"
+      },
+      "Root": {
+        "Relation": "within",
+        "Alignment": "top"
+      }
+    },
+    "SubtreeWidth": "adaptive",
+    "SubtreeHeight": "adaptive"
+  },
+  "CoordinateSystem": {
+    "Category": "cartesian"
+  },
+  "Element": {
+    "Node": "circle",
+    "Color": "class",
+    "Link": "straight",
+    "Thickness": "static",
+    "StaticThickness": 2
+  }
+}

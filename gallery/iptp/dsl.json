@@ -1,0 +1,1 @@
+{"Layout":{"Category":"AxisIndependent","Mode":"bottom-up","X":{"Subtree":{"Relation":"flatten"},"Root":{"Relation":"juxtapose"}},"Y":{"Subtree":{"Relation":"align","Alignment":"top"},"Root":{"Relation":"juxtapose"}},"SubtreeWidth":"adaptive","SubtreeHeight":"adaptive"},"CoordinateSystem":{"Category":"cartesian"},"Element":{"Node":"rectangle","Color":"depth"}}

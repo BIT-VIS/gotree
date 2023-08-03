@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "5da5852e8ba68f8069eb3a32",
+    "treename": "ArcTree",
+    "username": "root",
+    "date": "2019-10-12",
+    "template": "{\"Name\":\"ArcTree\",\"Element\":{\"Node\":\"circle\",\"Link\":\"arccurve\",\"Thickness\":\"static\",\"StaticThickness\":2,\"Color\":\"depth\"},\"CoordinateSystem\":{\"Category\":\"cartesian\"},\"Layout\":{\"Category\":\"AxisIndependent\",\"Mode\":\"bottom-up\",\"X\":{\"Root\":{\"Relation\":\"juxtapose\",\"Margin\":\"0.05\"},\"Subtree\":{\"Relation\":\"flatten\",\"Margin\":0.1}},\"Y\":{\"Root\":{\"Relation\":\"within\"},\"Subtree\":{\"Relation\":\"align\"}}}}"
+  },
+  {
+    "_id": "5da5852e8ba68f8069eb3a33",
+    "treename": "CurveTree",
+    "username": "root",
+    "date": "2019-10-12",
+    "template": "{\"Name\":\"CurveTree\",\"Element\":{\"Node\":\"hidden\",\"Color\":\"depth\",\"Link\":\"curve\",\"Label\":\"hidden\",\"Thickness\":\"depth\",\"StaticThickness\":2},\"CoordinateSystem\":{\"Category\":\"cartesian\"},\"Layout\":{\"Category\":\"AxisIndependent\",\"X\":{\"Root\":{\"Relation\":\"include\",\"Padding\":[0,0]},\"Subtree\":{\"Relation\":\"flatten\",\"Margin\":0}},\"Y\":{\"Root\":{\"Relation\":\"juxtapose\",\"Margin\":\"0r\"},\"Subtree\":{\"Relation\":\"align\"}},\"Mode\":\"top-down\"}}"
+  },
+  {
+    "_id": "5da5852e8ba68f8069eb3a34",
+    "treename": "NodeLink",
+    "username": "root",
+    "date": "2019-10-12",
+    "template": "{\"Name\":\"NodeLink\",\"Element\":{\"Node\":\"circle\",\"Link\":\"straight\",\"Thickness\":\"static\",\"StaticThickness\":2,\"Color\":\"depth\"},\"CoordinateSystem\":{\"Category\":\"cartesian\"},\"Layout\":{\"Category\":\"AxisIndependent\",\"Mode\":\"bottom-up\",\"X\":{\"Root\":{\"Relation\":\"within\"},\"Subtree\":{\"Relation\":\"flatten\",\"Margin\":\"0.3w\"}},\"Y\":{\"Root\":{\"Relation\":\"juxtapose\",\"Margin\":0.2},\"Subtree\":{\"Relation\":\"align\",\"Alignment\":\"top\"}}}}"
+  },
+  {
+    "_id": "5da5852e8ba68f8069eb3a35",
+    "treename": "Sunburst",
+    "username": "root",
+    "date": "2019-10-12",
+    "template": "{\"Name\":\"Sunburst\",\"Element\":{\"Node\":\"rectangle\",\"Color\":\"depth\",\"Link\":\"hidden\",\"Label\":\"hidden\"},\"CoordinateSystem\":{\"Category\":\"polar\"},\"Layout\":{\"Category\":\"AxisIndependent\",\"X\":{\"Root\":{\"Relation\":\"include\",\"Padding\":[0,0]},\"Subtree\":{\"Relation\":\"flatten\",\"Margin\":0}},\"Y\":{\"Root\":{\"Relation\":\"juxtapose\",\"Margin\":0},\"Subtree\":{\"Relation\":\"align\"}},\"Mode\":\"top-down\"}}"
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "Title": "ViolinTree",
+  "Layout": {
+    "Mode": "bottom-up",
+    "X": {
+      "Subtree": {
+        "Relation": "flatten"
+      },
+      "Root": {
+        "Relation": "juxtapose"
+      }
+    },
+    "Y": {
+      "Subtree": {
+        "Relation": "flatten",
+        "Margin": "-0.46",
+        "MarginType": "space-between"
+      },
+      "Root": {
+        "Relation": "include"
+      }
+    },
+    "SubtreeWidth": "adaptive",
+    "SubtreeHeight": "adaptive"
+  },
+  "CoordinateSystem": {
+    "Category": "polar",
+    "PolarCenter": "bottom",
+    "StartAngle": 0.01
+  },
+  "Element": {
+    "Node": "rectangle",
+    "Color": "depth"
+  }
+}

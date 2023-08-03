@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>GoTree - A Grammar of Tree Visualization</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="css/landing-page.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container navbar-container">
+      <img class="navbar-brand-img" src="./icon/favicon.ico">
+      <a class="navbar-brand" id="title" href="./index.html">GoTree</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./gallery.html">Gallery <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./tutorials.html">Tutorials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./documentation.html">Documentation</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="./usage.html">Usage</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./ecosystem.html">Ecosystem</a>
+          </li> -->
+         </ul>
+      </div>
+      <a class="btn btn-primary" id="launch" href="./app/index.html">Tree Illustrator</a>
+    </div>
+  </nav>
+
+  <section class="examples">
+    <div class="page-centered page-content">  
+      <h1>Introduction to GoTree</h1>
+      <p>
+        This tutorial will guide through the process of writing a visualization specification in GoTree. We will walk you through the decomposition approach of GoTree at first. Then we will explain the components using several example specification one-by-one. After creating the example visualization, we will also guide you how to embed the final visualization on a web page.
+      </p>
+      <p>
+        We suggest that you follow along the tutorial by building a visualization in the online editor. Extend your specification in the editor as you read through this tutorial. If something does not work as expected, compare your specifications with ones inside this tutorial.
+      </p>
+      <h2 id="node-link">
+        <a id="tutorial_overview" class="anchor">
+        </a>
+        Tutorial Overview
+      </h2>
+      <p>
+        This tutorial is divided into two parts. The first part is the tree visualizations decomposition approach, which is divided into three levels, TreeUnit, Subtree group, and Axis, respectively. The second part is the declarative grammar design to describe one TreeUnit in detail, Visual elements, coordinate system and layout. The following is the structure of this tutorial. 
+      </p>
+      <!--===============The following is the content list==============-->      
+      <ul>
+        <li> 
+          <a href="#tutorial_overview" class="anchor">Tutorial Overview</a>
+        </li>
+        <li> 
+          <a href="#data">Data</a>
+        </li>
+        <!--****************************************-->
+        <li> 
+          <a href="#treevis_decomposition">Tree Visualization Decomposition</a>
+          <ul>
+            <li>
+              <a href="#treeunit">TreeUnit</a>
+            </li>
+            <li>
+              <a href="#subtree_group">Subtree Group</a>
+            </li>
+            <li>
+              <a href="#axis" class="anchor">Axis</a>              
+            </li>
+          </ul>
+        </li>
+        <!--****************************************-->
+        <li> 
+          <a href="#grammar_design" class="anchor">GoTree Grammar Design</a>
+          <ul>
+            <li>
+              <a href="#visual_element" class="anchor">Visual Element</a>
+            </li>
+            <li>
+              <a href="#coordinate_system" class="anchor">Coordinate System</a>
+            </li>
+            <li>
+              <a href="#layout" class="anchor">Layout</a>              
+            </li>
+          </ul>
+        </li>
+        <!--****************************************-->
+        <li> 
+          <a href="#example" class="anchor">Example</a>
+          <ul>
+            <li>
+              <a href="#icicle_plot" class="anchor">Icicle plot</a>
+            </li>
+            <li>
+              <a href="#sunburst" class="anchor">Sunburst</a>
+            </li>
+          </ul>
+        </li>       
+      </ul>
+      <!--===============The following is the detailed tutorial==============-->
+      <!--***************About Data*************************-->
+      <h2>
+        <a id="data" class="anchor">
+        </a>
+        The Data
+      </h2>
+      <p>
+        Hierarchical data are often using the <a href="http://www.json.org/">JSON</a> format, because if is sufficient to express the nested structure. The following shows the standard format of GoTree. The other hierarchical data format, for example, <a href="https://en.wikipedia.org/wiki/Newick_format">newick format</a> can also be transformed to the JSON format. 
+      </p>
+      <pre>
+      <code class="language-json hljs"> {
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"A"</span>
+  <span class="hljs-attr">"children"</span>: [
+      {<span class="hljs-attr">"name"</span>:<span class="hljs-string">"B"</span>
+        <span class="hljs-attr">"children"</span>: [
+          {<span class="hljs-attr">"name"</span>: <span class="hljs-string">"C"</span>, <span class="hljs-attr">"value"</span>: <span class="hljs-number">2</span>},
+          {<span class="hljs-attr">"name"</span>: <span class="hljs-string">"D"</span>, <span class="hljs-attr">"value"</span>: <span class="hljs-number">2</span>}
+        ]  
+      },
+      {<span class="hljs-attr">"name"</span>:<span class="hljs-string">"E"</span>
+        <span class="hljs-attr">"children"</span>: [
+          {<span class="hljs-attr">"name"</span>: <span class="hljs-string">"F"</span>, <span class="hljs-attr">"value"</span>: <span class="hljs-number">2</span>},
+          {<span class="hljs-attr">"name"</span>: <span class="hljs-string">"G"</span>, <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>} 
+      }
+    ]
+ }</code>
+</pre>
+      <p>
+        The above hierarchical data have seven nodes, each of which contains one unique attribute <inline-code>name</inline-code> and one numberical attribute <inline-code>value</inline-code>. In the instance data, only leaf nodes contain the numberical value, and the numberical value of the other nodes is the sum of all its descendant node.  
+      </p>
+      <!--***************About Tree Visualization Decomposition*************************-->
+      <h2>
+        <a id="treevis_decomposition" class="anchor">
+        </a>
+        Tree Visualization Decomposition
+      </h2>
+      <p>
+        Tree visualizations encode parent-child relationships through one of a few different visual representations, such as implicit relative positions of nodes (e.g., adjacency or containment) or explicit visual elements (e.g., straight lines or arcs for edges).
+      </p>
+      <p>
+        The characteristic of the hierarchical data is that the children of one hierarchical data are still independent hierarchies with the same topological structure. Accordingly, tree visualizations have similar characteristics — the subtree of a tree visualization can still be regarded as an independent tree. 
+      </p>
+      <img src="./img/unitbased.png" width="70%" class="tutorial-image"/>
+      <p>
+        For most tree visualizations as shown in the figure above, such as node-link diagram, icicle plot, Treemap, and etc., the visual representation of one subtree within the whole visualization is same to the results by visualizing it as a standalone tree visualization. The tree visualizations with this characteristic can be divided recursively into several basic components. Assembling the basic components can also reproduce these original tree visualizations.
+      </p>
+      <br/>
+      <!--*******About Tree Unit**********-->
+      <h4>
+        <a id="treeunit" class="anchor">
+        </a>
+        TreeUnit
+      </h4>
+      <p>
+        Based on such characteristic of hierarchical data, we define the basic components of tree visualizations as TreeUnit. Defining the tree visualizations as the group of TreeUnit is actually separating the inner parent-child relationships. 
+      </p>
+      <p>
+        With decomposing the whole tree visualizations into small components, our method allows describing the tree visualizations in a fine-grained manner. Our method can also facilitate users to explore the possible layout of tree visualizations flexibly, because the encodings of parent-child relationships in different TreeUnit are independent. The figure below shows one TreeUnit with two subtrees.
+      </p>
+
+      <img src="./img/treeunit.png" width="55%" class="tutorial-image"/>
+
+      <p>
+        A TreeUnit contains the root node and its subtrees. In our definitions, root refers to the specific visual element of tree visualizations, but subtrees only represent its occupied space, because we do not care about the hierarchical structure within the subtree of a TreeUnit. To determine this TreeUnit the required attribute values we need to compute include <inline-code>x</inline-code>, <inline-code>y</inline-code>, <inline-code>width</inline-code> and <inline-code>height</inline-code> of root and each subtree. 
+      </p>
+      <img src="./img/treeunit-paras.png" width="50%" class="tutorial-image"/>
+
+      <p>
+        Specifically, the positional attributes are relative to the upper left corner of the whole TreeUnit and all these attributes are relative values. In particular, we do not need to determine the x and y of the whole TreeUnit, which is determined by the computations of its upper level.
+      </p>
+
+      <p>
+        TreeUnit only focus on the relationships between parent and child nodes and sibling nods. However, some tree visualization layouts (e.g., flexTree, force-firected tree, and Bubble Treemap) also consider the other interrelationships among the nodes. 
+      </p>
+      <br/>
+      <!--*******About Subtree Group**********-->
+      <h4>
+        <a id="subtree_group" class="anchor">
+        </a>
+        Subtree Group
+      </h4>
+      <p>
+        Based on the above analysis in <a href="#treeunit">TreeUnit</a>, TreeUnit can be regarded as the basic component of tree visualizations, and assemble the TreeUnit recursively can reproduce the original tree visualization. As a result, we only discuss the layout decomposition for one TreeUnit.
+      </p>
+
+      <p>
+        Tree layout is to determine the nodes attribute values in tree visualizations. Specifically, the visual attributes include the positional and length of the nodes, which need to be determined along each axes in the coordinate system. We divide the tree layout strategies of one TreeUnit into two categories. For the first category, the visual attributes of the visual elements on different axes are interdependent, and the layout methods in the second category computes the encoded attributes along each axis independently. 
+      </p>
+
+      <p>
+        The tree visualizations in the first category include Circle packing tree visualizations, Squarified Treemap, Voronoi Treemap, and etc. The figure below shows these three tree visualization examples. 
+      </p>
+
+      <img src="./img/non-axis.png" width="80%" class="tutorial-image"/>
+
+      <p>
+        Circle packing tree visualizations need to compute and optimize the Euclidean distances (x<sub>1</sub> - x<sub>2</sub>)<sup>2</sup> + (y<sub>1</sub> - y<sub>2</sub>)<sup>2</sup>. Squarified Treemap and Voronoi Treemap need to opmimize the aspect ratio of the width and height (width / height). In this way, tree layouts must compute these attributes together. The algorithms of axis-interdependent layout methods vary greatly and are developed according to different criteria. In this paper, we do not decompose these tree visualization methods further. 
+      </p>
+
+      <p>
+        A TreeUnit is composed of root and its subtrees. The relative positions among these elements encode the relationships between parent and child and the relationships among subtrees. To separate these two relationships apart, we define the subtree group as the collection of the subtrees under the root node. We define the subtree group as the collection of the subtrees under the root node to separater these two relationships apart. As shown in the figure below, the <strong>parent-child relationships</strong> are transformed to the relationships between root and subtree group. The <strong>relationships among siblings</strong> are transformed to the relationships among the subtrees within subtree group.
+      </p>
+      <!--*******About Axis**********-->
+      <h4>
+        <a id="axis" class="anchor">
+        </a>
+        Axis
+      </h4>
+      <p>
+        Our method further decomposes the tree layout methods in the second category along each axis independently. Specifically, both the relationship between root node and subtree group and the relationships among the siblings can be decomposed along the axis. 
+      </p>
+      <h5>Parent-child relationship</h5>
+      <p>
+        The parent-child relationships along each axis can be divided into three categories, as shown in the figure below. The first one is that the root node includes subtree group, the second one is that the root node juxtapose with subtree group, and the third one is that the root node is placed within subtree group. Note that all the relationships are specificed along with the axis instead of the whole visual elements. 
+      </p>
+
+      <img src="./img/parent-child-relationship.png" width="80%" class="tutorial-image"/>
+
+      <p>
+        To further determine the positions of the nodes of each relationship, we added some other parameters borrowed from the box model of CSS. Under the relationship that root include the subtree group, we add <inline-attr>padding</inline-attr> parameter. Under the relationship that the root juxtapose with subtree group, we add the <inline-attr>position</inline-attr> parameters, including <inline-parameter>top</inline-parameter>, <inline-parameter>bottom</inline-parameter>, <inline-parameter>left</inline-parameter>, and <inline-parameter>right</inline-parameter>, to determine the relative positions between root and subtree group. We also add <inline-attr>margin</inline-attr> parameters to determine their accurate positions. Specifically, <inline-attr>padding</inline-attr> creates extra space within an element, while <inline-attr>margin</inline-attr> creates extra space around an element. We can get the detailed relationships with setting the <inline-attr>margin</inline-attr> parameters as positive (separation relationship), zero (adjacency relationship) or negative (overlapping relationship). Under the relationships that the root is placed within subtree group, we add <inline-attr>alignment</inline-attr> parameter, and the <inline-attr>alignment</inline-attr> parameter can be set to <inline-parameter>left</inline-parameter>, <inline-parameter>right</inline-parameter>, or <inline-parameter>center</inline-parameter> along the horizontal axis, and <inline-parameter>top</inline-parameter>, <inline-parameter>bottom</inline-parameter>, or <inline-parameter>center</inline-parameter> along the vertical axis.
+      </p>
+
+      <h5>Sibling relationship</h5>
+      <p>
+        The sibling relationships along each axis can be divided into two categories along each axis. The first one flattens the siblings while the second one aligns the siblings according to the specified parameters. For the flatten layout, we add <inline-parameter>sorting</inline-parameter> parameters to specify the orders and <inline-attr>margin</inline-attr> parameters to specify their relative positions. For the align layout, we add the <inline-parameter>alignment</inline-parameter> parameters to specify the alignment criteria. The detailed parameters are shown in the figure below and they are similar to the definitions in the relationships between root and subtree group.
+      </p>
+      <img src="./img/sibling-relationship.png" width="80%" class="tutorial-image"/>
+      <!--***************About GoTree Grammar Design*************************-->
+      <h2>
+        <a id="grammar_design" class="anchor">
+        </a>
+        GoTree Grammar Design
+      </h2>
+      <p>
+        The goal of our grammar’s design is to allow users to specify the visual appearance of tree visualizations without considering the implementation details. In our declarative grammar, we provide users with flexible parameters to ensure its expressiveness and allow users to customize the tree visualizations. To reproduce the original tree visualizations, the specification of our declarative grammar in this section is consistent with the <a href="#treevis_decomposition">tree visualization decomposition approach</a> above.
+      </p>
+      <img src="./img/grammar-design.png" width="50%" class="tutorial-image"/>   
+      <p>
+        Various parameters in our declarative grammar enhance the expressiveness of the grammar. However, it also increases the complexity of the declarative language and results in a steep learning curve for users. To improve the usability and simplicity, we provide default values for some parameters, underlined in our declarative language, to reduce users' programming burdens. 
+      </p>
+      <p>
+        After setting the default values, users only need to specify the Relation under the root and subtrees. In particular, for the length parameters of declarative grammar, including SubtreeWidth, SubtreeHeight, RootWidth, and RootHeight, users need to specify the encoding values. The margin and padding in the declarative grammar are relative values. The margin between the root and the subtree group is relative to the whole TreeUnit or the root node. The margin between the subtrees is relative to the subtree group. The padding is relative to the whole length of the outside container.
+      </p>   
+      <!--*******About the visual element**********-->
+      <h4>
+        <a id="visual_element" class="anchor">
+        </a>
+        Visual Element
+      </h4>
+      <p>
+        The visual element contains several parameters, including <inline-attr>link</inline-attr>, <inline-attr>node</inline-attr>, <inline-attr>color</inline-attr>, <inline-attr>RootWidth</inline-attr> and <inline-attr>RootHeight</inline-attr>. <inline-attr>Link</inline-attr> can be set to be <inline-parameter>hidden</inline-parameter>, <inline-parameter>straight</inline-parameter>, <inline-parameter>orthogonal</inline-parameter>, <inline-parameter>arc</inline-parameter> (curve), <inline-parameter>bezier</inline-parameter> (curve), etc. 
+      </p>
+      <p>
+        <inline-attr>Node</inline-attr> can be set to be <inline-parameter>hidden</inline-parameter>, <inline-parameter>rect</inline-parameter>, <inline-parameter>circle</inline-parameter>. <inline-attr>Color</inline-attr> can be set to <inline-parameter>null</inline-parameter>, which means that the color does not encode attributes, or color can encode <inline-parameter>value</inline-parameter>, <inline-parameter>depth</inline-parameter>, <inline-parameter>height</inline-parameter> and <inline-parameter>width</inline-parameter>. Similar to the color, <inline-attr>RootWidth</inline-attr> and <inline-attr>RootHeight</inline-attr> can also encode the <inline-parameter>value</inline-parameter>, <inline-parameter>depth</inline-parameter>, <inline-parameter>height</inline-parameter>, and <inline-parameter>width</inline-parameter>. When the <inline-attr>RootWidth</inline-attr> and <inline-attr>RootHeight</inline-attr> do not encode the attribute, they will be set to be <inline-parameter>adaptive</inline-parameter>. 
+      </p>
+      <!--*******About Coordinate System**********-->
+      <h4>
+        <a id="coordinate_system" class="anchor">
+        </a>
+        Coordinate System
+      </h4>
+      <p>
+        The parameters of Coordinate system contain Category, PolarAxis, PolarInnerRadius. <inline-attr>Category</inline-attr> can be <inline-parameter>cartesian</inline-parameter> (coordinate system), and <inline-parameter>polar</inline-parameter> (coordinate system). If the category of the coordinate system is <inline-parameter>polar</inline-parameter> (coordinate system), the <inline-attr>PolarAxis</inline-attr> can be <inline-parameter>x-axis</inline-parameter> and <inline-parameter>y-axis</inline-parameter>, which means that the angular direction of the polar coordinate system.
+      </p>
+      <!--*******About Axis**********-->
+      <h4>
+        <a id="layout" class="anchor">
+        </a>
+        Layout
+      </h4>
+      <p>
+        To determine the layout of tree visualizations, users need to specify the parameters of each axis independently. Each axis contains 
+          <inline-attr>Root</inline-attr>,
+        which denote the relationship between root and subtree group, and 
+          <inline-attr>siblings</inline-attr>, 
+        which denotes the relationship among subtrees within subtree group. The parameters 
+          <inline-attr>Alignment</inline-attr> (<inline-parameter>center</inline-parameter>, <inline-parameter>top</inline-parameter>, <inline-parameter>bottom</inline-parameter>, <inline-parameter>left</inline-parameter>, <inline-parameter>right</inline-parameter>), 
+
+          <inline-attr>Margin</inline-attr>, <inline-attr>Padding</inline-attr>
+          and <inline-attr>Position</inline-attr> (<inline-parameter>top</inline-parameter>, <inline-parameter>bottom</inline-parameter>, <inline-parameter>left</inline-parameter>, <inline-parameter>right</inline-parameter>) 
+
+          determine the position of the nodes accurately. 
+      </p>
+      <!--***************About Example of TreeVisualization*************************-->
+      <h2>
+        <a id="example" class="anchor">
+        </a>
+        Example
+      </h2>
+      <p>
+        Next we will take the icicle plot as an example to explain the grammar design of GoTree. Icicle plot is a traditional implicit tree visualization and frequently used in our real world applications. Next, we will describe the icicle plot according to the above decomposition approach. 
+      </p>
+      <!--*******About the visual element**********-->
+      <h4>
+        <a id="icicle_plot" class="anchor">
+        </a>
+        Icicle plot
+      </h4>
+      <p>
+        The visual elements of icicle plot only contains the node and do not contain the link, because the parent-child relationships are encoded in the relative position between the nodes. This method improves the space utilization efficiency. The color, width, and height of nodes could encode different attributes of the hierarchical data, such as value, depth, height, etc. Based on the decomposition, the visual element aspect of icicle plot is shown below.
+      </p>
+      <pre>
+      <code class="language-json hljs"> {
+  <span class="hljs-attr">"Element"</span>: {
+      <span class="hljs-attr">"Node"</span>: <span class="hljs-string">"rect"</span>,
+      <span class="hljs-attr">"Link"</span>: <span class="hljs-string">"hidden"</span>, 
+      <span class="hljs-attr">"Color"</span>: <span class="hljs-string">"depth"</span>, 
+      <span class="hljs-attr">"RootWidth"</span>: <span class="hljs-string">"adaptive"</span>, 
+      <span class="hljs-attr">"RootHeight"</span>: <span class="hljs-string">"adaptive"</span>
+    }
+  }</code>
+</pre>
+      <p>
+        The coordinate system of icicle plot is the cartesian system. For the cartesian system, we do not need to set the other attributes except the category.
+      </p>
+      <pre>
+      <code class="language-json hljs"> {
+  <span class="hljs-attr">"CoordinateSystem"</span>: {
+      <span class="hljs-attr">"Category"</span>: <span class="hljs-string">"cartesian"</span>
+    }
+  }</code>
+</pre>  
+      <p>
+        The layout of icicle plot could be decomposed into the TreeUnit, because the visualization results of the subtree are same to visualizing it as a standalong tree visualization. For each TreeUnit, it is decomposed along the axes respectively. The icicle plot is in the 2d visual space, as a result we decompose it from two axis respectively (horizontal axis and vertical axis) in the following.  
+      </p>    
+      <p>
+        The figure below shows the decomposition results of one TreeUnit in icicle plot. <1> The relationship between Root and subtree group. From the horizontal direction, the root node includes the subtree group and the padding parameter is 0. From the vertical direction, the subtree group juxtaposes at the bottom of the root nodes, and the margin parameter is also 0. <2> The relationship among the subtrees within subtree group. The layout approach flatten the subtrees along the horizontal direction, and the margin parameter is 0. From the vertical direction, the subtrees are aligned along the center of subtrees. 
+      </p>
+      <img src="./img/treedecompose-icicleplot.png" width="80%" class="tutorial-image"/>
+      <p>
+        Based on the above analysis, we can get the following layout configurations.
+      </p>
+      <pre>
+      <code class="language-json hljs"> {
+  <span class="hljs-attr">"Layout"</span>: {
+      <span class="hljs-attr">"X"</span>: {
+        <span class="hljs-attr">"Root"</span>: {
+          <span class="hljs-attr">"Relation"</span>:<span class="hljs-string">"include"</span>, 
+          <span class="hljs-attr">"Padding"</span>:<span class="hljs-string">"0"</span>
+        },
+        <span class="hljs-attr">"Sibling"</span>: {
+          <span class="hljs-attr">"Relation"</span>:<span class="hljs-string">"flatten"</span>, 
+          <span class="hljs-attr">"Margin"</span>:<span class="hljs-string">"0"</span>
+        }
+      },
+      <span class="hljs-attr">"Y"</span>: {
+        <span class="hljs-attr">"Root"</span>: {
+          <span class="hljs-attr">"Relation"</span>:<span class="hljs-string">"juxtapose"</span>
+          <span class="hljs-attr">"Margin"</span>:<span class="hljs-string">"0"</span>
+        },
+        <span class="hljs-attr">"Sibling"</span>: {
+          <span class="hljs-attr">"Relation"</span>:<span class="hljs-string">"align"</span>, 
+          <span class="hljs-attr">"Alignment"</span>:<span class="hljs-string">"top"</span>
+        }
+      },
+      <span class="hljs-attr">"Mode"</span>:<span class="hljs-string">"bottom-up"</span>
+    }
+  }</code>
+</pre> 
+    <h4>
+      <a id="sunburst" class="anchor">
+      </a>
+        sunburst
+    </h4>
+    <p>
+      Although Sunburst tree visualization is quite different from the visualization results, transforming the icicle plot to sunburst only need to change the attribute values of the coordinate system category. 
+    </p>
+      <pre>
+      <code class="language-json hljs"> {
+  <span class="hljs-attr">"CoordinateSystem"</span>: {
+      <span class="hljs-attr">"Category"</span>: <span class="hljs-string">"polar"</span>,
+      <span class="hljs-attr">"PolarInnerRadius"</span>: <span class="hljs-string">"0"</span>,
+      <span class="hljs-attr">"PolarAxis"</span>: <span class="hljs-string">"x-axis"</span>,
+      <span class="hljs-attr">"PolarAxis"</span>: <span class="hljs-string">"x-axis"</span>
+    }
+  }</code>
+</pre>
+    </div>
+  </section>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+<style>
+.navbar-brand-img {
+  width: 30px;
+  margin-right: 5px;
+}
+</style>
+</html>

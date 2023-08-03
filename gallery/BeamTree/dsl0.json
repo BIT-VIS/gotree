@@ -1,0 +1,14 @@
+{
+  "TreeVisSpecifiction": [
+    {
+      "NodeQuery": "depth%2 == 1",
+      "Recursive": false,
+      "TreeTemplate": "HorizontalBeamTree"
+    },
+    {
+      "NodeQuery": "depth%2 == 0",
+      "Recursive": false,
+      "TreeTemplate": "VerticalBeamTree"
+    }
+  ]
+}

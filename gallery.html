@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>GoTree - A Grammar of Tree Visualization</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="css/landing-page.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container navbar-container">
+      <img class="navbar-brand-img" src="./icon/favicon.ico">
+      <a class="navbar-brand" id="title" href="./index.html">GoTree</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="./gallery.html">Gallery <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./tutorials.html">Tutorials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./documentation.html">Documentation</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="./usage.html">Usage</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./ecosystem.html">Ecosystem</a>
+          </li> -->
+         </ul>
+      </div>
+      <a class="btn btn-primary" id="launch" href="./app/index.html">Tree Illustrator</a>
+    </div>
+  </nav>
+
+  <section class="examples">
+    <div class="page-centered page-content">  
+      <h1>Example Gallery</h1>
+      <p>This page shows example specifications for different types of tree visualizations. </p>
+      <!-- and demo video -->
+      <h2>Single Tree Visualizations</h2>
+      <div class="subtitle"><strong>Implicit Tree Visualizations</strong></div>
+      <div class="gallery">
+        <a class="gallery-item" href="gallery/IndentedTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/IndentedTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">IndentedTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/treemap-slice">
+          <div class="gallery-item-img" style="background-image: url(gallery/treemap-slice/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">treemap-slice</span>
+        </a>
+        <a class="gallery-item" href="gallery/barcodetree">
+          <div class="gallery-item-img" style="background-image: url(gallery/barcodetree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">BarcodeTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/sunburst">
+          <div class="gallery-item-img" style="background-image: url(gallery/sunburst/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">sunburst</span>
+        </a>
+        <a class="gallery-item" href="gallery/iptp">
+          <div class="gallery-item-img" style="background-image: url(gallery/iptp/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">iptp</span>
+        </a>
+        <a class="gallery-item" href="gallery/outside-in-tree">
+          <div class="gallery-item-img" style="background-image: url(gallery/outside-in-tree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">outside-in-tree</span>
+        </a>
+        <a class="gallery-item" href="gallery/icicleplot">
+          <div class="gallery-item-img" style="background-image: url(gallery/icicleplot/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">icicleplot</span>
+        </a>
+        <a class="gallery-item" href="gallery/cheops">
+          <div class="gallery-item-img" style="background-image: url(gallery/cheops/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">cheops</span>
+        </a>
+        <a class="gallery-item" href="gallery/HierarchicalSectorChart">
+          <div class="gallery-item-img" style="background-image: url(gallery/HierarchicalSectorChart/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">Hierarchical Sector Chart</span>
+        </a>
+      </div>
+      <div class="subtitle"><strong>Explicit Tree Visualizations</strong></div>
+      <div class="gallery">
+        <a class="gallery-item" href="gallery/NodeLinkTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/NodeLinkTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">NodeLinkTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/OrthogonalGridEmbedding">
+          <div class="gallery-item-img" style="background-image: url(gallery/OrthogonalGridEmbedding/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">OrthogonalGridEmbedding</span>
+        </a>
+        <a class="gallery-item" href="gallery/radial-deep">
+          <div class="gallery-item-img" style="background-image: url(gallery/radial-deep/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">radial-deep</span>
+        </a>
+        <a class="gallery-item" href="gallery/dendrogram">
+          <div class="gallery-item-img" style="background-image: url(gallery/dendrogram/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">dendrogram</span>
+        </a>
+         <a class="gallery-item" href="gallery/arc-tree">
+          <div class="gallery-item-img" style="background-image: url(gallery/arc-tree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">arc-tree</span>
+        </a>
+        <a class="gallery-item" href="gallery/cartesian-deep-tree">
+          <div class="gallery-item-img" style="background-image: url(gallery/cartesian-deep-tree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">cartesian-deep</span>
+        </a>
+        <a class="gallery-item" href="gallery/RadialTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/RadialTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">RadialTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/RadialTreeIncline">
+          <div class="gallery-item-img" style="background-image: url(gallery/RadialTreeIncline/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">RadialTreeIncline</span>
+        </a>
+        <a class="gallery-item" href="gallery/SpiralLayout">
+          <div class="gallery-item-img" style="background-image: url(gallery/SpiralLayout/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">SpiralLayout</span>
+        </a>
+        <a class="gallery-item" href="gallery/RadialPhylogeneticTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/RadialPhylogeneticTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">RadialPhylogeneticTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/ReadableTreeLayout">
+          <div class="gallery-item-img" style="background-image: url(gallery/ReadableTreeLayout/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">ReadableTreeLayout</span>
+        </a>
+      </div>
+
+
+      <h2>Hybrid Tree Visualizations</h2>
+      <div class="gallery">
+        <a class="gallery-item" href="gallery/NestedPieTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/NestedPieTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">NestedPieTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/CascadedTreemap">
+          <div class="gallery-item-img" style="background-image: url(gallery/CascadedTreemap/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">CascadedTreemap</span>
+        </a>
+        <a class="gallery-item" href="gallery/Treemap">
+          <div class="gallery-item-img" style="background-image: url(gallery/Treemap/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">Slice-and-dice Treemap</span>
+        </a>
+        <a class="gallery-item" href="gallery/TreemapOval">
+          <div class="gallery-item-img" style="background-image: url(gallery/TreemapOval/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">TreemapOval</span>
+        </a>
+        <a class="gallery-item" href="gallery/GardenLayout">
+          <div class="gallery-item-img" style="background-image: url(gallery/GardenLayout/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">GardenLayout</span>
+        </a>
+        <a class="gallery-item" href="gallery/HTreeLayout">
+          <div class="gallery-item-img" style="background-image: url(gallery/HTreeLayout/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">HTreeLayout</span>
+        </a>
+        <a class="gallery-item" href="gallery/ElasticHierarchy">
+          <div class="gallery-item-img" style="background-image: url(gallery/ElasticHierarchy/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">ElasticHierarchy</span>
+        </a>
+        <a class="gallery-item" href="gallery/MultilevelSilhouetteTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/MultilevelSilhouetteTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">MultilevelSilhouetteTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/HVDrawing">
+          <div class="gallery-item-img" style="background-image: url(gallery/HVDrawing/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">HVDrawing</span>
+        </a>
+        <a class="gallery-item" href="gallery/BeamTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/BeamTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">BeamTree</span>
+        </a>
+      </div>
+
+
+      <h2>Novel Tree Visualizations</h2>
+      <div class="gallery">
+        <a class="gallery-item" href="gallery/ClockTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/ClockTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">ClockTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/RotationTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/RotationTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">RotationTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/ClockTreeWithLink">
+          <div class="gallery-item-img" style="background-image: url(gallery/ClockTreeWithLink/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">ClockTreeWithLink</span>
+        </a>
+        <a class="gallery-item" href="gallery/Jewelry">
+          <div class="gallery-item-img" style="background-image: url(gallery/Jewelry/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">JewelryTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/OrthogonalTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/OrthogonalTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">OrthogonalTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/StairTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/StairTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">StairTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/SideTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/SideTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">SideTree</span>
+        </a>
+         <a class="gallery-item" href="gallery/FlowerTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/FlowerTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">FlowerTree</span>
+        </a>
+         <a class="gallery-item" href="gallery/WeaveTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/WeaveTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">WeaveTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/SectorTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/SectorTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">SectorTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/SectorTree2">
+          <div class="gallery-item-img" style="background-image: url(gallery/SectorTree2/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">SectorTree2</span>
+        </a>
+        <a class="gallery-item" href="gallery/OakTreeVis">
+          <div class="gallery-item-img" style="background-image: url(gallery/OakTreeVis/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">OakTreeVis</span>
+        </a>
+        <a class="gallery-item" href="gallery/TyreTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/TyreTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">TyreTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/TornadoTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/TornadoTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">TornadoTree</span>
+        </a>
+        <a class="gallery-item" href="gallery/TornadoTree2">
+          <div class="gallery-item-img" style="background-image: url(gallery/TornadoTree2/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">TornadoTree2</span>
+        </a>
+        <a class="gallery-item" href="gallery/ViolinTree">
+          <div class="gallery-item-img" style="background-image: url(gallery/ViolinTree/tree.png)">
+            <!-- <img src="" width="100%"> -->
+          </div>
+          <span class="gallery-item-title">ViolinTree</span>
+        </a>
+
+
+      </div>  
+    </div>
+  </section>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+
+<style>
+.gallery {
+  margin: 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-flow: row dense;
+  grid-gap: 30px 50px;
+  /* overflow: hidden; */
+}
+
+.gallery-item {
+  /* margin: 10px; */
+  /* overflow: hidden; */
+/*  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+*/  cursor: pointer;
+  height: 100%;
+  text-align: center;
+}
+.gallery-item-img:hover {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+
+.gallery-item-img {
+  display: block;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  padding-bottom: 70%;
+  background-position: left top;
+  background-size: cover;
+  /* overflow: hidden; */
+  transition: ease background-position 3s;
+}
+
+.gallery-item-img:hover {
+  background-position:right bottom;
+}
+
+.gallery-item-title {
+  font-size: 14px;
+}
+
+.navbar-brand-img {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+</style>

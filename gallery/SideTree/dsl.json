@@ -1,0 +1,43 @@
+{
+  "Title": "SideTree",
+  "Element": {
+    "Node": "circle",
+    "Link": "straight",
+    "LinkWidth": "adaptive",
+    "LinkWidthRatio": 1,
+    "Color": "depth",
+    "SizeOption": "static",
+    "StaticSize": 6,
+    "Thickness": "static",
+    "StaticThickness": 2
+  },
+  "CoordinateSystem": {
+    "Category": "polar",
+    "StartAngle": 0.17
+  },
+  "Layout": {
+    "Category": "AxisIndependent",
+    "Mode": "bottom-up",
+    "X": {
+      "Root": {
+        "Relation": "juxtapose",
+        "Margin": "0.01"
+      },
+      "Subtree": {
+        "Relation": "align"
+      }
+    },
+    "Y": {
+      "Root": {
+        "Relation": "juxtapose",
+        "Margin": "0.07"
+      },
+      "Subtree": {
+        "Relation": "flatten",
+        "Margin": "0.94"
+      }
+    },
+    "SubtreeWidth": "adaptive",
+    "SubtreeHeight": "adaptive"
+  }
+}

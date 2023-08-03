@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<title>example | GoTree</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="../../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+<link href="../../css/landing-page.css" rel="stylesheet">
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container navbar-container">
+            <a class="navbar-brand" id="title" href="../../index.html">GoTree</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../../gallery.html">Gallery <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../tutorials.html">Tutorials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../documentation.html">Documentation</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="../../usage.html">Usage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../ecosystem.html">Ecosystem</a>
+                    </li> -->
+                </ul>
+            </div>
+            <a class="btn btn-primary" id="launch" href="./TreeIllustrator/index.html">Tree Illustrator</a>
+        </div>
+    </nav>
+
+    <section class="examples">
+        <div class="page-centered page-content">
+            <h1>Example</h1>
+            <p>
+                SideTree is designed to visualize the parent-child relations of hierarchical data inclusion. It arranges the nodes along the orthogonal positions of the canvas. 
+            </p>
+            <img src="tree.png" class="GoTreeImg">
+
+            <br>
+            <br>
+            <h4>Visual Elements</h4>
+            <p>
+                The nodes of SideTree is <strong>circle</strong>. The links of SideTree is <strong>straight</strong> edges.
+            </p>
+            <h4>Coordinate System</h4>
+            <p>
+                  The coordinate system of SideTree is <strong>polar</strong> coordinate system.
+            </p>
+            <h4>Layout</h4>
+            <p>
+                  Along the radial axis, the relation between root and subtree group is <strong>align</strong>. The relation among subtrees within subtree group is <strong>juxtapose</strong>.
+            </p>
+            <p>
+                  Along the angular axis, the relation between root and subtree group is <strong>flatten</strong>. The relation among subtrees within subtree group is <strong>juxtapose</strong>.
+            </p>
+            <h3>GoTree JSON Specification</h3>
+            <pre class="dsl">
+<code id="dsl"></code>
+            </pre>
+        </div>
+    </section>
+</body>
+<!-- Bootstrap core JavaScript -->
+<script src="../../vendor/jquery/jquery.min.js"></script>
+<script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+    
+
+    var dsl = document.getElementById('dsl')
+    // var dsl_code = JSON.stringify(arr, null, 4)
+    // console.log(dsl_code)
+    // dsl.innerHTML = dsl_code
+    function syntaxHighlight(json) {
+        if (typeof json != 'string') {
+            json = JSON.stringify(json, undefined, 4);
+        }
+        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+            var cls = 'number';
+            if (/^"/.test(match)) {
+                if (/:$/.test(match)) {
+                    cls = 'key';
+                } else {
+                    cls = 'string';
+                }
+            } else if (/true|false/.test(match)) {
+                cls = 'boolean';
+            } else if (/null/.test(match)) {
+                cls = 'null';
+            }
+            return '<span class="' + cls + '">' + match + '</span>';
+        });
+    }
+    var data1 = {
+            text: "have a try",
+            bool: true,
+            num: 123,
+            null: null
+        }
+        console.log(data1)
+        // dsl.innerHTML = syntaxHighlight(data1)
+    d3.json("./dsl.json")
+        .then(function (data) {
+            console.log('!!!')
+            dsl.innerHTML = syntaxHighlight(data)
+        })
+
+    
+</script>
+
+</html>
+
+<style>
+
+.dsl {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    line-height: 1.3em;
+    font-size: 1.2em;
+}
+
+.GoTreeImg {
+    max-width: 100%;
+    max-height: 40vh;
+}
+
+</style>

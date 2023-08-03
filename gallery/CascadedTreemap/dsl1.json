@@ -1,0 +1,44 @@
+{
+  "Title": "DiceLayout",
+  "Layout": {
+    "Mode": "top-down",
+    "X": {
+      "Subtree": {
+        "Relation": "align"
+      },
+      "Root": {
+        "Relation": "include",
+        "Padding": [
+          "0.3",
+          "-0.3"
+        ]
+      }
+    },
+    "Y": {
+      "Subtree": {
+        "Relation": "flatten",
+        "Margin": "0.19"
+      },
+      "Root": {
+        "Relation": "include",
+        "Padding": [
+          "0.03",
+          "-0.07"
+        ]
+      }
+    },
+    "SubtreeWidth": "adaptive",
+    "SubtreeHeight": "value"
+  },
+  "CoordinateSystem": {
+    "Category": "cartesian"
+  },
+  "Element": {
+    "Node": "rectangle",
+    "ColorRange": [
+      "#0C497D",
+      "#DEEBF7"
+    ],
+    "Color": "depth"
+  }
+}

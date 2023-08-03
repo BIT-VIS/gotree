@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>GoTree - A Grammar of Tree Visualization</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="css/landing-page.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container navbar-container">
+      <img class="navbar-brand-img" src="./icon/favicon.ico">
+      <a class="navbar-brand" id="title" href="./index.html">GoTree</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./gallery.html">Gallery <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./tutorials.html">Tutorials</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./documentation.html">Documentation</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="./usage.html">Usage</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./ecosystem.html">Ecosystem</a>
+          </li> -->
+        </ul>
+      </div>
+      <a class="btn btn-primary" id="launch" href="./app/index.html">Tree Illustrator</a>
+    </div>
+  </nav>
+
+  <section class="examples">
+    <div class="page-centered page-content">
+      <h1>Notice</h1>
+      <!-- <p>本页面主要介绍如何使用。请确保你已熟悉GoTree的基本语法。</p> -->
+      <p>This page introduces how to use Tree Illustrator. Make sure you have read the basic <a
+          href="./tutorials.html">grammar</a>.</p>
+
+      <!-- <h1>系统概览</h1>
+      <p>
+        
+        <br>
+        系统界面.png
+        <br>
+        系统主要分为6个部分
+        <br>
+        1. 工具栏：数据载入、gallery、结果导出。
+        <br>
+        2. GoTree组件视图：每个GoTree语法包括5个组件，可单击或拖拽选择组件。
+        <br>
+        3. treeUnit视图：以一个简单的二层结构的层次结构数据，直接展示当前调整的GoTree形式，支持多个参数的直接调整。
+        <br>
+        4. treeUnit控制面板：显示当前GoTree的所有组件，可调整不同组件的所有参数，相应地会改变treeUnit视图。
+        <br>
+        5. GoTree仓库：包括我们预设的经典GoTree语法，以及用户保存的GoTree语法。
+        <br>
+        6. TreeCanvas：展示最终的树可视化形式，支持为不同的数据节点指定GoTree语法。
+      </p> -->
+
+      <h1>User Interface Components</h1>
+      <p>Tree Illustrator consists of 6 following components:</p>
+      <ol>
+        <li>
+          <p>
+            <strong>Tool Bar</strong>
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Components Panel</strong>
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>TreeUnit View</strong>
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Params Panel</strong>
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Template Panel</strong>
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Tree Canvas</strong>
+          </p>
+        </li>
+      </ol>
+
+      <!-- <h2 id="loading_data">
+        <a href="#loading_data">
+        </a>
+        数据载入
+      </h2>
+      <p>
+        点击工具栏的数据按钮，可上传数据，支持单击选择上传或拖拽上传，具体格式详见（）。为方便用户使用，我们也准备了一些样例数据，如界面下方所示，可直接选择。
+      </p> -->
+
+      <h2 id="loading_data">
+        <a href="#loading_data">
+        </a>
+        Loading Data
+      </h2>
+      <p>
+        When you launch Tree Illustrator, it automatically loads a default hierarchical data. <b>You can skip
+          it.</b><br>
+        If you need change data, Make sure the data is in <a href="./tutorials.html#data">JSON</a> format. Click on the
+        data button in the toolbar to upload data.
+        <!-- 点击工具栏的数据按钮，可上传数据，支持单击选择上传或拖拽上传，具体格式详见（）。为方便用户使用，我们也准备了一些样例数据，如界面下方所示，可直接选择。 -->
+      </p>
+      <img src="./img/data_button.png" width="47%">
+      <img src="./img/data_upload.png" width="50%">
+
+      <h2 id="create_tree">
+        <a href="#create_tree">
+        </a>
+        Creating a Tree
+      </h2>
+      <p>
+        <!-- , <br> -->
+        Clicking on any GoTree template, all nodes will be assigned it <b>by default</b>. The tree visualization will be
+        automatically created in the Tree Canvas When each node is assigned a GoTree template.
+        <!-- 通过单击选择仓库展示的GoTree语法，为所有的数据节点应用该语法，treeCanvas会生成相应的可视化结果。 -->
+      </p>
+      <img src="./img/create-tree.gif" width="100%">
+
+      <h2 id="adjust_gotree_para">
+        <a href="#adjust_gotree_para">
+        </a>
+        Editing Template Params
+      </h2>
+      <p>
+        <!-- 单击仓库中的GoTree语法后，treeUnit视图会展示在简单数据下的可视化形式，除此之外，还包括可调整的参数模块，如兄弟节点间的间距控制等。如下图所示。 -->
+        After clicking on any GoTree template, the TreeUnit View will shows the visualization in a simple data and the
+        Params Panel will shows all the parameters that can be edited.
+      </p>
+      <p>
+        Besides the Params Panel, you can modify the params directly by hovering over where you would like to modify in
+        the TreeUnit View.
+      </p>
+      <!-- <p>
+        鼠标移至想更改的参数区域，鼠标符号会发生变化，可根据提示直接拖动，以修改相应的参数，treeUnit视图会相应变化。
+      </p>
+      <p>
+        GoTree的控制面板也会显示当前的所有组件的所有参数，可直接修改，treeUnit视图会相应变化。
+      </p> -->
+
+      <h2 id="adjust_gotree_component">
+        <a href="#adjust_gotree_component">
+        </a>
+        Editing Template Components
+      </h2>
+      <p>
+        Click on any component on the Components Panel, the template will be replace with the selected Component.
+      </p>
+
+      <h2 id="new_gotree">
+        <a href="#new_gotree">
+        </a>
+        Creating New Template
+      </h2>
+      <p>
+        Except modifying the current template, click on the "New" button to create a new blank template. Components can
+        be added to the blank template and their parameters can be modified.
+      </p>
+
+
+      <h2 id="save_gotree">
+        <a href="#save_gotree">
+        </a>
+        Save / Delete Template
+      </h2>
+      <p>
+        Click on the "Save" button to save the template as a new one whenever you are satisfied.
+      </p>
+      <p>
+        Click on the "Delete" button to delete the template from the Template Panel.
+      </p>
+
+
+
+      <h2 id="create_tree_complex">
+        <a href="#create_tree_complex">
+        </a>
+        Hybrid Template
+      </h2>
+      <p>
+        Select the node that you want to change the template in Tree Canvas, then click the template that needs to be
+        assigned to the select node(s), and Tree Canvas will generate a hybrid result.
+      </p>
+      <p>
+        Supports the quick operation of selecting multiple nodes -- apply to all nodes at the same level as the select
+        nodes; or to all children nodes of the selected nodes, etc.
+      </p>
+
+      <h2 id="download_gotree">
+        <a href="#download_gotree">
+        </a>
+        Exporting
+      </h2>
+      <p>
+        Click on the "Export" buttton to export the reslut. Supports png, svg, json.
+      </p>
+
+
+
+
+
+
+
+
+    </div>
+  </section>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+<style>
+.navbar-brand-img {
+  width: 30px;
+  margin-right: 5px;
+}
+</style>
+</html>

@@ -1,0 +1,362 @@
+/*!
+ * Start Bootstrap - Landing Page v5.0.4 (https://startbootstrap.com/template-overviews/landing-page)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-landing-page/blob/master/LICENSE)
+ */
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin: 0.7em 0 0.3em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 500;
+  display: block;
+  border-bottom: 1px solid #cccccc;
+  color: black;
+  margin-top: 1.5em;
+  padding-bottom: 1px;
+}
+
+.navbar-container {
+  max-width: 1000px;
+}
+
+#showcase {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+
+#showcase:before {
+  box-shadow: 0px -8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.hljs {
+  padding: 0;
+  background-color: transparent;
+  display: block;
+  overflow-x: auto;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-string {
+  color: #d14;
+}
+
+.hljs-number {
+  color: #008080;
+}
+
+.examples {
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  line-height: inherit;
+  margin-left: -2%;
+}
+
+.tutorial-image {
+  display: block;
+  margin: auto;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+code {
+  font-family: monospace;
+}
+
+inline-code {
+  font-family: monospace;
+  border: 1px solid #ddd;
+  background: #f6f6f6;
+  font-size: 0.8em;
+}
+
+inline-parameter {
+  font-family: monospace;
+  border: 1px solid #ddd;
+  background: #f6f6f6;
+  font-size: 0.8em;
+  color: #008080;
+}
+
+inline-attr {
+  font-family: monospace;
+  border: 1px solid #ddd;
+  background: #f6f6f6;
+  font-size: 0.8em;
+  color: #d14;
+}
+
+pre {
+  white-space: pre-wrap;
+  background: #f9f9f9;
+  line-height: 1em;
+}
+
+.preview {
+  width: 180px;
+  height: 100px;
+  padding: 0px;
+  outline: 1px solid #ddd;
+  background-position: left top;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  transition: background-position 2s;
+  display: block;
+  float: left;
+}
+
+.preview:hover{
+  background-position:right bottom;
+}
+
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/bg-masthead.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.masthead .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+#launch {
+  background-color: steelblue;
+  border-color: steelblue;
+}
+
+header.masthead h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+.showcase .showcase-text {
+  padding: 3rem;
+}
+
+.showcase .showcase-img {
+  min-height: 30rem;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    padding: 7rem;
+  }
+}
+
+.features-icons {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.brief-intro {
+  padding-top: 2rem;
+  padding-bottom: 0rem;
+  display: block;
+  text-align: left;
+  font-size: 1.3em;
+}
+
+.lead-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.row-odd {
+  background-color: #F0F0F0;
+}
+
+.row-even {
+  background-color: white;
+}
+
+.nav-link {
+  display: inline-block;
+}
+
+.lead-columns > span:first-child {
+  margin-right: 60px;
+}
+
+.lead-buttons a {
+  display: block;
+  width: 250px;
+  padding: 8px 16px;
+  margin: 1em 0;
+  text-align: center;
+  background-color: steelblue;
+  border: 1px solid #357ebd;
+  color: white;
+  font-size: 1.2em;
+}
+
+a:not(:hover) {
+  text-decoration: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+.complete-intro {
+  padding-top: 0rem;
+  padding-bottom: 2rem;
+  text-align: left;
+}
+
+.page-main {
+  display: flex;
+  flex-direction: column;
+  flex-flow: initial;
+}
+
+.page-centered{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.features-icons .features-icons-item {
+  max-width: 20rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon {
+  height: 7rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon i {
+  font-size: 4.5rem;
+}
+
+.features-icons .features-icons-item:hover .features-icons-icon i {
+  font-size: 5rem;
+}
+
+.testimonials {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.testimonials .testimonial-item {
+  max-width: 18rem;
+}
+
+.testimonials .testimonial-item img {
+  max-width: 12rem;
+  -webkit-box-shadow: 0px 5px 5px 0px #adb5bd;
+  box-shadow: 0px 5px 5px 0px #adb5bd;
+}
+
+.call-to-action {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/bg-masthead.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.call-to-action .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+.navbar-brand {
+  font-size: 1.6rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+#title {
+  font-weight: bold;
+}
+
+.nav-item {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.intro-text {
+  text-align: center;
+  color: red;
+}
+
+footer.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+#launch {
+  border-radius: 0rem;
+}
+
+.key {
+    color: #d01040;
+}
+
+.string {
+    color: black;
+}
+
+.boolean {
+    color: blue;
+}
+
+.number { 
+    color: #009999;
+}
+
+.null {
+    color: green;
+}

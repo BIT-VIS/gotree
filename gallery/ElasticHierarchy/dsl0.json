@@ -1,0 +1,14 @@
+{
+  "TreeVisSpecifiction": [
+    {
+      "NodeQuery": "depth == 1",
+      "Recursive": false,
+      "TreeTemplate": "NodeLinkTree"
+    },
+    {
+      "NodeQuery": "depth > 0",
+      "Recursive": true,
+      "TreeTemplate": "Treemap"
+    }
+  ]
+}

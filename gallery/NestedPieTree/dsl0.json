@@ -1,0 +1,15 @@
+{
+  "Title": "NestedPieTree",
+  "TreeVisSpecifiction": [
+    {
+      "NodeQuery": "depth%2 == 1",
+      "Recursive": false,
+      "TreeTemplate": "SliceLayout"
+    },
+    {
+      "NodeQuery": "depth%2 == 0",
+      "Recursive": false,
+      "TreeTemplate": "SliceLayout"
+    }
+  ]
+}

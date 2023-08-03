@@ -1,0 +1,42 @@
+{
+  "Title": "RadialDeepTree",
+  "Element": {
+    "Node": "circle",
+    "Color": "depth",
+    "Link": "curve",
+    "LinkWidth": "depth",
+    "LinkWidthRatio": 1,
+    "Thickness": "depth",
+    "MinThickness": 1,
+    "MaxThickness": 9,
+    "SizeOption": "static",
+    "StaticSize": 10
+  },
+  "CoordinateSystem": {
+    "Category": "polar"
+  },
+  "Layout": {
+    "Category": "AxisIndependent",
+    "X": {
+      "Root": {
+        "Relation": "include"
+      },
+      "Subtree": {
+        "Relation": "flatten"
+      }
+    },
+    "Y": {
+      "Root": {
+        "Relation": "juxtapose",
+        "Margin": "0r"
+      },
+      "Subtree": {
+        "Relation": "align",
+        "Alignment": "top"
+      }
+    },
+    "Mode": "bottom-up",
+    "SubtreeWidth": "adaptive",
+    "SubtreeHeight": "adaptive"
+  }
+}

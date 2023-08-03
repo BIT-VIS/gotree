@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>GoTree - A Grammar of Tree Visualization</title>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="css/landing-page.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="fill">
+    <!-- Masthead class="masthead text-white text-center"-->
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container navbar-container">
+          <img class="navbar-brand-img" src="./icon/favicon.ico">
+          <a class="navbar-brand" id="title" href="./index.html">GoTree</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="./gallery.html">Gallery <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./tutorials.html">Tutorials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./documentation.html">Documentation</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="./usage.html">Usage</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./ecosystem.html">Ecosystem</a>
+              </li> -->
+             </ul>
+          </div>
+          <a class="btn btn-primary" id="launch" href="./app/index.html">Tree Illustrator</a>
+        </div>
+      </nav>
+    </header>
+    <section>  
+      <div class="page-centered page-main">
+        <section class="page-content text-center">
+          <!-- <img src="img/gotree-index.gif" class="index_gif"> -->
+          <video class="index_gif" src="./video/gotree.mp4" controls="controls">您的浏览器不支持video标签</video>
+<!--           <iframe width="960" height="540" src="https://www.youtube.com/embed/lLCV0c9lMX8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ -->          <p class="brief-intro">
+            <Strong>GoTree</Strong>, a declarative grammar allowing clients to instantiate tree visualizations by specifying three aspects: <Strong>visual elements</Strong>, <Strong>layout</Strong>, and <Strong>coordinate system</Strong>. Within the set of all possible tree visualization techniques, we identify a subset of techniques that are both “unit-decomposable” and “axis-decomposable”. For tree visualizations within this subset, GoTree gives the user flexible and fine-grained control over the parameters of the techniques, supporting both explicit and implicit tree visualizations.  
+          </p>
+        </section>
+      </div>
+    </section>
+    <div class="page-centered page-main">
+      <section class="page-content text-center">
+        <h2>
+        </h2>
+      </section>
+    </div>
+    <!-- Footer -->
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item">
+                <a href="#">About</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Contact</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">&copy;  All Rights Reserved.</p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mr-3">
+                <i class="fas fa-home fa-2x fa-fw"></i>
+              </li>
+              <li class="list-inline-item mr-3">
+                <i class="fas fa-blog fa-2x fa-fw"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+
+<style>
+.index_gif {
+  width: 960px;
+}
+.navbar-brand-img {
+  width: 30px;
+  margin-right: 5px;
+}
+.index-bg-img {
+  width: 30px;
+  width: 110%;
+  margin-top: -40px;
+  margin-right: -2%;
+}
+.gotree-title {
+  padding-top: 30px;
+  height: 200px;
+  text-align: center;
+}
+.gotree-title-icon {
+  width: 80px;
+}
+.gotree-title-text {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+.gotree-subtitle-text {
+  padding-top: 10px;
+  font-size: 1.5rem;
+  color: gray;
+}
+.page-main {
+  margin-top: 30px;
+}
+.brief-intro{
+  font-size: 1.2rem;
+  color: #555555;
+}
+</style>
